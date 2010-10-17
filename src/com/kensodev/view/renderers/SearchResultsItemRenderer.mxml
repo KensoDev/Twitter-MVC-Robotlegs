@@ -3,33 +3,7 @@
 				xmlns:s="library://ns.adobe.com/flex/spark" 
 				xmlns:mx="library://ns.adobe.com/flex/mx" 
 				autoDrawBackground="true">	
-	
-	<fx:Script>
-		<![CDATA[
-			import com.kensodev.model.Tweet;
-			
-			import mx.effects.Tween;
-			
-			override public function set data(value:Object):void
-			{
-				super.data = value;
-				
-				var tweet:Tweet = value as Tweet;
-				
-				if(tweet)
-				{
-					message.text = tweet.message;
-					username.text = tweet.user;
-				}
-				else
-				{
-					message.text = "";
-					username.text = "";
-				}
-			}
-		]]>
-	</fx:Script>
-	
+
 	<s:layout>
 		<s:VerticalLayout paddingBottom="5"
 						  paddingRight="5"
@@ -37,7 +11,7 @@
 						  paddingTop="5" />
 	</s:layout>
 	
-	<s:Label id="username" width="100%" fontWeight="bold" />
-	<s:Label id="message" width="100%" maxDisplayedLines="4" />
+	<s:Label id="username" width="100%" fontWeight="bold" text="{data.user}" />
+	<s:Label id="message" width="100%" maxDisplayedLines="4" text="{data.message}" />
 	
 </s:ItemRenderer>

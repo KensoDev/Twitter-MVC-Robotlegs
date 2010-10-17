@@ -1,5 +1,6 @@
 package com.kensodev.model
 {
+	[Bindable]
 	public class Tweet
 	{
 		public function Tweet()

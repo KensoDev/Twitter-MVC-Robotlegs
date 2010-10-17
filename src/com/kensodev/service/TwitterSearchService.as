@@ -30,10 +30,10 @@ package com.kensodev.service
 			loader = new URLLoader();
 		}
 		
-		private const TWITTER_SEARCH_ENDPOINT:String = "http://search.twitter.com/search.json";
+		private const TWITTER_SEARCH_JSON_URL:String = "http://search.twitter.com/search.json";
 		public function populateResults(query:String = "robotlegs"):void
 		{
-			var urlRequest:URLRequest = new URLRequest(TWITTER_SEARCH_ENDPOINT);
+			var urlRequest:URLRequest = new URLRequest(TWITTER_SEARCH_JSON_URL);
 			var params:URLVariables = new URLVariables();
 			
 			params.q = query;

@@ -1,9 +1,10 @@
-package com.kensodev.service.helpers
+package com.kensodev.service.parser
 {
 	import com.adobe.serialization.json.JSONDecoder;
 	import com.kensodev.model.Tweet;
 	
 	import mx.effects.Tween;
+	import com.kensodev.service.helpers.ISearchResultsParser;
 
 	public class TwitterSearchResultsParser implements ISearchResultsParser
 	{

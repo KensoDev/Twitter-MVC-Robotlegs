@@ -10,7 +10,6 @@
 		<s:VerticalLayout />
 	</s:layout>
 	
-	<s:TextInput id="searchText" /> 
-	<s:Button id="cmdSearch" label="search" />
+	<view:SearchComponentView id="searchComponent" />
 	<view:SearchResultsView id="searchView" width="500" />
 </s:Application>

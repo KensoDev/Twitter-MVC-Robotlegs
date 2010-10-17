@@ -5,7 +5,8 @@ package com.kensodev
 	import com.kensodev.service.TwitterSearchService;
 	import com.kensodev.service.helpers.ISearchResultsParser;
 	import com.kensodev.service.helpers.ISearchService;
-	import com.kensodev.service.helpers.TwitterSearchResultsParser;
+	import com.kensodev.service.parser.TwitterSearchResultsParser;
+	import com.kensodev.view.SearchComponentView;
 	import com.kensodev.view.SearchResultsView;
 	import com.kensodev.view.mediators.MainApplicationMediator;
 	import com.kensodev.view.mediators.SearchResultsViewMediator;
@@ -20,13 +21,12 @@ package com.kensodev
 		override public function startup():void
 		{
 			mediatorMap.mapView( SearchResultsView, SearchResultsViewMediator );
-			mediatorMap.mapView( twitter_search_mvc, MainApplicationMediator );
+			mediatorMap.mapView( SearchComponentView, MainApplicationMediator );
 			
 			commandMap.mapEvent( SearchButtonEvent.SEARCH_BUTTON_CLICKED, TwitterSearchCommand );
 		
 			injector.mapSingletonOf( ISearchService, TwitterSearchService );
 			injector.mapSingletonOf( ISearchResultsParser, TwitterSearchResultsParser );
 		}
-		
 	}
 }
